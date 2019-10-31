@@ -11,8 +11,8 @@ export const Container = styled.div`
     border-radius: 3px;
     border: 1px solid #E6E6E6;
 
-    img {
+    &>img {
         width: 100%;
-        margin: 60px 0 60px 0;
+        margin-bottom: 60px;
     }
 `;

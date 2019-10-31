@@ -1,16 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Container } from './styles';
 
 import Post from '../Post';
 
-export default function Feed() {
-    const images = [1, 2, 3, 4, 5];
+export default function Feed({ feedData }) {
+
+    const [lazyFeed, setLazyFeed] = useState([]);
+    const [feedCount, setFeedCount] = useState(5);
+
+    useEffect(() => {
+        setLazyFeed(feedData ? feedData.slice(0, feedCount) : []);
+
+        const handleScroll = () => {
+            const scroll_pos = document.body.scrollTop || document.documentElement.scrollTop
+            const scroll_height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+            if (scroll_height > 0 && scroll_pos > 0 && Math.abs(scroll_pos - scroll_height) <= 100) {
+                console.log("REFRESH");
+                setFeedCount(feedCount + 5);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        }
+    }, [feedData, feedCount]);
 
     return (
         <Container>
-            {images.map((img, id) => (
-                <Post key={id} img={`/images/${img}.jpg`} />
+            {lazyFeed && lazyFeed.map((post_data, id) => (
+                <Post postData={post_data} key={id} />
             ))}
         </Container>
     );

@@ -6,4 +6,10 @@ export const Container = styled.div`
     
     align-items: center;
     justify-content: center;
+
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
 `;

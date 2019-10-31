@@ -2,11 +2,20 @@ import React from 'react';
 
 import { Container } from './styles';
 
-export default function Post(props) {
+import UserHeader from '../UserHeader';
+
+export default function Post({ postData }) {
+
+    const user_data = {
+        url: postData.url,
+        name: postData.author,
+        avatar: `https://picsum.photos/id/${postData.id}/32`
+    };
 
     return (
         <Container>
-            <img src={props.img} alt={props.img} />
+            <UserHeader userData={user_data} />
+            <img src={postData.download_url} alt={`${postData.id}`} />
         </Container>
     );
 }
