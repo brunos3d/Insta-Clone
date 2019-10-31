@@ -2,14 +2,11 @@ import React from 'react';
 
 import { Container } from './styles';
 
-import Feed from './components/Feed';
-
-export default function App() {
+export default function Post(props) {
 
     return (
         <Container>
-            <Feed />
+            <img src={props.img} alt={props.img} />
         </Container>
     );
 }
-
