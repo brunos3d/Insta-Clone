@@ -17,7 +17,6 @@ export default function Feed({ feedData }) {
             const scroll_height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 
             if (scroll_height > 0 && scroll_pos > 0 && Math.abs(scroll_pos - scroll_height) <= 100) {
-                console.log("REFRESH");
                 setFeedCount(feedCount + 5);
             }
         };

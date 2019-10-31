@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     margin-top: 60px;
-    max-width: 600px;
+    width: 600px;
 
     display: flex;
     flex-direction: column;
@@ -10,9 +10,4 @@ export const Container = styled.div`
     background-color: #fff;
     border-radius: 3px;
     border: 1px solid #E6E6E6;
-
-    &>img {
-        width: 100%;
-        margin-bottom: 60px;
-    }
 `;

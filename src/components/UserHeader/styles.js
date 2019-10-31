@@ -7,14 +7,17 @@ export const Container = styled.div`
 
     padding: 16px;
 
-    img {
+    a>img {
         width: 32px;
         height: 32px;
         border-radius: 50%;
     }
-
-    a {
+    h2 {
+        font-weight: 600;
+        font-size: 0.9em;
         margin-left: 10px;
+    }
+    h2>a {
         color: #262626;
         text-decoration: none; 
     }
