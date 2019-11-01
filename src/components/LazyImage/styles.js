@@ -33,13 +33,13 @@ export const Container = styled.div`
         filter: drop-shadow(0 5px 5px #222);
     }
     .popup-animation {
-        animation: popup 1.5s normal;
+        animation: popup 1s normal;
     }
     .unloaded {
         filter: blur(10px);
     }
     .loaded {
-        animation: defog 0.5s normal;
+        animation: defog 0.25s normal;
     }
     @keyframes defog {
         from {
