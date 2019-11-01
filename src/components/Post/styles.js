@@ -11,9 +11,39 @@ export const Container = styled.article`
     border-radius: 3px;
     border: 1px solid #E6E6E6;
 
+    &>footer {
+        display: flex;
+        flex-direction: row;
+
+        padding: 16px;
+    }
+    &>footer svg {
+        width: 32px;
+    }
+
+    &>footer>button {
+        border: none;
+        background: none;
+        
+        cursor: pointer;
+        outline: none;
+        user-select: none;
+        touch-action: manipulation;
+    }
+    &>footer>button>.downvote path {
+        fill: #000;
+    }
+    &>footer>button>.upvote path {
+        fill: #ED4956ff;
+    }
+
     @media screen and (max-width: 800px) {
         margin-top: 30px;
         width: 400px;
+
+        &>footer {
+            padding: 8px;
+        }
     }
 
     @media screen and (max-width: 500px) {

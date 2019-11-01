@@ -10,7 +10,6 @@ export const Container = styled.div`
     flex-direction: column;
     
     overflow: hidden;
-    margin-bottom: 60px;
 
     &>img {
         width: 100%;
@@ -73,13 +72,5 @@ export const Container = styled.div`
             opacity: 0;
             transform: scale(0);
         }
-    }
-
-    @media screen and (max-width: 800px) {
-        margin-bottom: 40px;
-    }
-
-    @media screen and (max-width: 500px) {
-        margin-bottom: 40px;
     }
 `;

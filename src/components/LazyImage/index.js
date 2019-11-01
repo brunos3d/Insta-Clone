@@ -2,11 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 
 import { Container } from './styles';
 
-export default function LazyImage({ minified, large, alt }) {
+export default function LazyImage({ favorite, setFavorite, minified, large, alt }) {
 
     const thisElement = useRef(null);
     const [loaded, setLoaded] = useState(false);
-    const [favorite, setFavorite] = useState(false);
     const [displayImage, setDisplayImage] = useState(minified);
 
     useEffect(() => {
