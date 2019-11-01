@@ -21,4 +21,24 @@ export const Container = styled.header`
         color: #262626;
         text-decoration: none; 
     }
+
+    @media screen and (max-width: 800px) {
+
+        padding: 8px;
+
+        a>img {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        
+        a>img {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+        }
+    }
 `;

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
     outline: none;
     user-select: none;
+    touch-action: manipulation;
     
     position: relative;
     display: flex;
@@ -72,5 +73,13 @@ export const Container = styled.div`
             opacity: 0;
             transform: scale(0);
         }
+    }
+
+    @media screen and (max-width: 800px) {
+        margin-bottom: 40px;
+    }
+
+    @media screen and (max-width: 500px) {
+        margin-bottom: 40px;
     }
 `;
