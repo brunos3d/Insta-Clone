@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import { Container } from './styles';
 
+import MeowFacts from './meowfacts';
+
 import Navbar from './components/Navbar';
 import Feed from './components/Feed';
 
@@ -38,10 +40,15 @@ export default function App() {
     useEffect(() => {
 
         async function fetchData() {
-            const response = await fetch(`https://picsum.photos/v2/list?page=${currentPage}&limit=100`);
-            const json = await response.json();
+            const picsum_response = await fetch(`https://picsum.photos/v2/list?page=${currentPage}&limit=100`);
+            const array_data = await picsum_response.json();
 
-            setFeedData(shuffle(json));
+
+            for (let id = 0; id < array_data.length; id++) {
+                array_data[id].description = MeowFacts.getSingle();
+            }
+
+            setFeedData(shuffle(array_data));
         }
 
         fetchData();

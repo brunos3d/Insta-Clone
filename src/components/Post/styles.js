@@ -11,11 +11,17 @@ export const Container = styled.article`
     border-radius: 3px;
     border: 1px solid #E6E6E6;
 
+    
+    &>footer>p {
+        color: #262626;
+    }
     &>footer {
-        display: flex;
-        flex-direction: row;
-
         padding: 16px;
+        
+        display: flex;
+        flex-direction: column;
+        
+        align-items: center;
     }
     &>footer svg {
         width: 32px;

@@ -4,7 +4,12 @@
 #### Live Preview:
 >https://insta-clone.bruno3dcontato.now.sh/
 
-## Images
+## Speacial Thanks
+I love this project <3
+https://github.com/wh-iterabb-it/meowfacts
+
+I just didn't use this endpoint because of the overhead and handshake:
+https://meowfacts.herokuapp.com/ 
 
 # Browser View
 ![Preview 1](./images/image01.png)
