@@ -27,7 +27,7 @@ export const Container = styled.div`
     }
     img {
         border-right: 1px solid #000;
-        height: 2.25rem;
+        height: 3rem;
         padding-right: 0.8rem;
         /* transform: scale(0.25); */
     }
