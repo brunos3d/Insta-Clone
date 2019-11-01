@@ -26,19 +26,25 @@ export const Container = styled.div`
     }
 
     @media screen and (max-width: 1000px) {
-        max-width: 800px;
+        .ruler {
+            max-width: 800px;
+        }
     }
 
     @media screen and (max-width: 800px) {
-        max-width: 600px;
         height: 64px;
 
+        .ruler {
+            max-width: 600px;
+        }
         h1 {
             font-size: 2rem;
         }
     }
 
     @media screen and (max-width: 500px) {
-        max-width: 100%;
+        .ruler {
+            max-width: 100%;
+        }
     }
 `;
