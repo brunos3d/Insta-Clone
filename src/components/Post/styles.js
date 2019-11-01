@@ -13,15 +13,11 @@ export const Container = styled.article`
 
     
     &>footer>p {
+        font-size: 0.9rem;
         color: #262626;
     }
     &>footer {
-        padding: 16px;
-        
-        display: flex;
-        flex-direction: column;
-        
-        align-items: center;
+        padding: 20px;
     }
     &>footer svg {
         width: 32px;
@@ -48,7 +44,7 @@ export const Container = styled.article`
         width: 400px;
 
         &>footer {
-            padding: 8px;
+            padding: 16px;
         }
     }
 

@@ -19,7 +19,14 @@ export const Container = styled.div`
         flex-direction: row;
         align-items: center;
     }
+    img {
+        border-right: 2px solid #000;
+        height: 2.25rem;
+        padding-right: 0.8rem;
+        /* transform: scale(0.25); */
+    }
     h1 {
+        margin-left: 0.8rem;
         font-size: 2.5rem;
         font-weight: 300;
         font-family: 'Cookie', cursive;
