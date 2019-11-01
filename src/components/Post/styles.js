@@ -41,7 +41,7 @@ export const Container = styled.article`
 
     @media screen and (max-width: 800px) {
         margin-top: 30px;
-        width: 400px;
+        width: 100%;
 
         &>footer {
             padding: 16px;
@@ -50,6 +50,5 @@ export const Container = styled.article`
 
     @media screen and (max-width: 500px) {
         margin-top: 20px;
-        width: 300px;
     }
 `;

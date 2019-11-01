@@ -24,20 +24,9 @@ export const Container = styled.header`
 
     @media screen and (max-width: 800px) {
 
-        padding: 8px;
-
         a>img {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-        }
-    }
-
-    @media screen and (max-width: 500px) {
-        
-        a>img {
-            width: 16px;
-            height: 16px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
         }
     }
