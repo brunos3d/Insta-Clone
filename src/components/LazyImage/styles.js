@@ -53,18 +53,19 @@ export const Container = styled.div`
             opacity: 0;
             transform: scale(0);
         }
-        40% {
+        35% {
             opacity: 1;
-            transform: scale(1.2);
+            transform: scale(1.1);
         }
-        50% {
+        40% {
+            opacity: 0.8;
             transform: scale(1);
         }
         70% {
             transform: scale(1);
         }
         75% {
-            opacity: 1;
+            opacity: 0.9;
             transform: scale(1.1);
         }
         100% {

@@ -17,7 +17,7 @@ export default function App() {
     // Special Thank's
     // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
     function shuffle(array) {
-        var currentIndex = array.length, temporaryValue, randomIndex;
+        let currentIndex = array.length, temporaryValue, randomIndex;
 
         // While there remain elements to shuffle...
         while (0 !== currentIndex) {
@@ -39,7 +39,7 @@ export default function App() {
 
         async function fetchData() {
             const response = await fetch(`https://picsum.photos/v2/list?page=${currentPage}&limit=100`);
-            const json = await response.json()
+            const json = await response.json();
 
             setFeedData(shuffle(json));
         }
