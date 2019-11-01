@@ -10,11 +10,11 @@ export default function LazyImage({ minified, large, alt }) {
 
     useEffect(() => {
 
-        const handleScroll = () => {
+        function handleScroll() {
             const view_height = document.documentElement.clientHeight;
             const scroll_pos = document.body.scrollTop || document.documentElement.scrollTop
 
-            if (thisElement && thisElement.current && (
+            if (
                 // if top of the element is inside of view area
                 (
                     thisElement.current.offsetTop >= scroll_pos + 100
@@ -25,7 +25,7 @@ export default function LazyImage({ minified, large, alt }) {
                     (thisElement.current.offsetTop + thisElement.current.offsetHeight) >= scroll_pos + 100
                     && (thisElement.current.offsetTop + thisElement.current.offsetHeight) <= scroll_pos + view_height - 100
                 )
-            )) {
+            ) {
                 setDisplayImage(large);
             }
         };
