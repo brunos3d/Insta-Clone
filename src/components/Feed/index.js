@@ -4,7 +4,7 @@ import { Container } from './styles';
 
 import Post from '../Post';
 
-export default function Feed({ feedData }) {
+export default function Feed({ feedData, increaseCurrentPage }) {
 
     const [lazyFeed, setLazyFeed] = useState([]);
     const [feedCount, setFeedCount] = useState(5);
@@ -12,7 +12,7 @@ export default function Feed({ feedData }) {
     useEffect(() => {
         setLazyFeed(feedData ? feedData.slice(0, feedCount) : []);
 
-        const handleScroll = () => {
+        function handleScroll() {
             const scroll_pos = document.body.scrollTop || document.documentElement.scrollTop
             const scroll_height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 

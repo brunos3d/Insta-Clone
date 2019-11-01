@@ -30,8 +30,8 @@ export default function LazyImage({ minified, large, alt }) {
             }
         }
 
+        // only add scroll event listener to unloaded images to skip overhead
         if (!loaded) {
-            console.log("Low Performance");
             window.addEventListener('scroll', handleScroll);
         }
 
