@@ -1,15 +1,21 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    position: fixed;
-    top: 0;
     width: 100%;
-    height: 77px;
-    align-items: center;
-    background-color: #fff;
-    border-bottom: 1px solid #dbdbdb;
-    z-index: 1;
     
+    .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        align-items: center;
+        background: #fff;
+        border-bottom: 1px solid #dbdbdb;
+        z-index: 1;
+
+        transition-property: height, border-color;
+        transition-duration: 0.2s;
+        transition-timing-function: ease-in-out;
+    }
     .ruler {
         margin: auto;
         padding: 0 20px 0 20px;
@@ -30,6 +36,21 @@ export const Container = styled.div`
         font-size: 2.5rem;
         font-weight: 300;
         font-family: 'Cookie', cursive;
+
+        transition: opacity 0.2s ease-in-out;
+    }
+    
+    .navbar.non-scrolled {
+        height: 77px;
+    }
+    .navbar.scrolled {
+        height: 52px;
+    }
+    .navbar.scrolled>.ruler>h1 {
+        opacity: 0;
+    }
+    .navbar.scrolled>.ruler>img {
+        border-color: #fff;
     }
 
     @media screen and (max-width: 1000px) {
@@ -39,8 +60,6 @@ export const Container = styled.div`
     }
 
     @media screen and (max-width: 800px) {
-        height: 64px;
-
         .ruler {
             max-width: 600px;
         }
