@@ -1,15 +1,20 @@
 # Insta-Clone
  ⚛️ REACT.JS - Um pequeno projeto de estudo sobre feed e visualização de imagens inspirado no Instagram.
 
-#### Live Preview:
+## Live Preview:
 >https://insta-clone.bruno3dcontato.now.sh/
 
-## Speacial Thanks
+# Special Thanks
+
+#### MeowFacts
 I love this project <3
-https://github.com/wh-iterabb-it/meowfacts
+>https://github.com/wh-iterabb-it/meowfacts
 
 I just didn't use this endpoint because of the overhead and handshake:
-https://meowfacts.herokuapp.com/ 
+>https://meowfacts.herokuapp.com/ 
+
+#### Lorem Picsum
+>https://picsum.photos/
 
 # Browser View
 ![Preview 1](./images/image01.png)
