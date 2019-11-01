@@ -1,19 +1,28 @@
 # Insta-Clone
- ⚛️ REACT.JS - Um pequeno projeto de estudo sobre feed e visualização de imagens inspirado no Instagram.
+ ⚛️ REACT.JS - Feed Dinâmico, Lazzy-Load e visualização de imagens inspirado no Instagram.
+
+---
 
 ## Live Preview:
+Você pode testar o App no link a seguir:
 >https://insta-clone.bruno3dcontato.now.sh/
 
-# Special Thanks
+### Funcionalidades:
+
+1. Feed com carregamento dinâmico (Lorem Picsum).
+2. Imagens com carregamento dinâmico (Lazzy-Load).
+3. Transição dinâmica entre imagens de baixa e alta resolução.
+4. Duplo clique para curtir postagens.
+5. Layout Resposivo.
+
+---
 
 #### MeowFacts
-I love this project <3
+Dispõe uma descrição aleatória para cada postagem.
 >https://github.com/wh-iterabb-it/meowfacts
 
-I just didn't use this endpoint because of the overhead and handshake:
->https://meowfacts.herokuapp.com/ 
-
 #### Lorem Picsum
+Dispõe uma lista de imagens para construção do feed.
 >https://picsum.photos/
 
 # Browser View
