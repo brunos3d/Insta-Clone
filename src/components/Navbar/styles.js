@@ -20,7 +20,7 @@ export const Container = styled.div`
         align-items: center;
     }
     img {
-        border-right: 2px solid #000;
+        border-right: 1px solid #000;
         height: 2.25rem;
         padding-right: 0.8rem;
         /* transform: scale(0.25); */
