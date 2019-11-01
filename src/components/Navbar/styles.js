@@ -14,7 +14,7 @@ export const Container = styled.div`
         margin: auto;
         padding: 0 20px 0 20px;
         height: 100%;
-        max-width: 100vh;
+        max-width: 1000px;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -25,7 +25,12 @@ export const Container = styled.div`
         font-family: 'Cookie', cursive;
     }
 
+    @media screen and (max-width: 1000px) {
+        max-width: 800px;
+    }
+
     @media screen and (max-width: 800px) {
+        max-width: 600px;
         height: 64px;
 
         h1 {
@@ -34,5 +39,6 @@ export const Container = styled.div`
     }
 
     @media screen and (max-width: 500px) {
+        max-width: 100%;
     }
 `;
