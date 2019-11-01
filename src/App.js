@@ -36,8 +36,8 @@ export default function App() {
     }
 
     useEffect(() => {
+
         async function fetchData() {
-            console.log("Current Page:", currentPage);
             const response = await fetch(`https://picsum.photos/v2/list?page=${currentPage}&limit=100`);
             const json = await response.json()
 

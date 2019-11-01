@@ -6,6 +6,7 @@ export default function LazyImage({ minified, large, alt }) {
 
     const thisElement = useRef(null);
     const [loaded, setLoaded] = useState(false);
+    const [favorite, setFavorite] = useState(false);
     const [displayImage, setDisplayImage] = useState(minified);
 
     useEffect(() => {
@@ -40,6 +41,10 @@ export default function LazyImage({ minified, large, alt }) {
         }
     }, [thisElement, loaded, minified, large]);
 
+    function onImageDoubleClickHandle() {
+        setFavorite(true);
+    }
+
     function onLargeImageLoadHandle() {
         if (displayImage === large) {
             setLoaded(true);
@@ -47,8 +52,11 @@ export default function LazyImage({ minified, large, alt }) {
     }
 
     return (
-        <Container ref={thisElement}>
+        <Container tabIndex="0" onDoubleClick={() => onImageDoubleClickHandle()} ref={thisElement}>
             <img src={displayImage} onLoad={() => onLargeImageLoadHandle()} className={loaded ? "loaded" : "unloaded"} alt={alt} />
+            <div className="favorite-heart">
+                <img className={favorite ? "popup-animation" : "none"} src="./favorite-heart.svg" alt="heart" />
+            </div>
         </Container>
     );
 }
