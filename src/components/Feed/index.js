@@ -30,8 +30,8 @@ export default function Feed({ feedData, increaseCurrentPage }) {
 
     return (
         <Container>
-            {lazyFeed && lazyFeed.map((post_data, id) => (
-                <Post postData={post_data} key={id} />
+            {lazyFeed && lazyFeed.map((post_data, index) => (
+                <Post index={index} postData={post_data} key={index} />
             ))}
         </Container>
     );

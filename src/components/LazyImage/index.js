@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 import { Container } from './styles';
 
-export default function LazyImage({ favorite, setFavorite, minified, large, alt }) {
+export default function LazyImage({ loadOnInit, favorite, setFavorite, minified, large, alt }) {
 
     const thisElement = useRef(null);
     const [loaded, setLoaded] = useState(false);
@@ -14,7 +14,7 @@ export default function LazyImage({ favorite, setFavorite, minified, large, alt 
             const view_height = document.documentElement.clientHeight;
             const scroll_pos = document.body.scrollTop || document.documentElement.scrollTop
 
-            if (thisElement && thisElement.current && (
+            if (!loadOnInit && thisElement && thisElement.current && (
                 // if top of the element is inside of view area
                 (
                     thisElement.current.offsetTop >= scroll_pos + 100
@@ -32,13 +32,16 @@ export default function LazyImage({ favorite, setFavorite, minified, large, alt 
 
         // only add scroll event listener to unloaded images to skip overhead
         if (!loaded) {
+            if (loadOnInit) {
+                setDisplayImage(large);
+            }
             window.addEventListener('scroll', handleScroll);
         }
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
         }
-    }, [thisElement, loaded, minified, large]);
+    }, [loadOnInit, thisElement, loaded, minified, large]);
 
     function onImageDoubleClickHandle() {
         setFavorite(true);

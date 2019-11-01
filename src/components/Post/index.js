@@ -5,7 +5,7 @@ import { Container } from './styles';
 import UserHeader from '../UserHeader';
 import LazyImage from '../LazyImage';
 
-export default function Post({ postData }) {
+export default function Post({ index, postData }) {
 
     const [favorite, setFavorite] = useState(false);
 
@@ -22,7 +22,7 @@ export default function Post({ postData }) {
         <Container>
             <UserHeader userData={user_data} />
 
-            <LazyImage favorite={favorite} setFavorite={(value) => setFavorite(value)} minified={minified_image} large={large_image} alt={`${postData.id}`} />
+            <LazyImage loadOnInit={index === 0} favorite={favorite} setFavorite={(value) => setFavorite(value)} minified={minified_image} large={large_image} alt={`${postData.id}`} />
 
             <footer>
                 <button onClick={() => setFavorite(!favorite)}>
