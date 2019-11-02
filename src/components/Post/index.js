@@ -4,10 +4,12 @@ import { Container } from './styles';
 
 import UserHeader from '../UserHeader';
 import LazyImage from '../LazyImage';
+import CommentBoxInput from '../CommentBoxInput';
 
 export default function Post({ index, postData }) {
 
     const [favorite, setFavorite] = useState(false);
+    const [commentList, setCommentList] = useState([]);
 
     const large_image = `https://picsum.photos/id/${postData.id}/600`;
     const minified_image = `https://picsum.photos/id/${postData.id}/32`;
@@ -53,8 +55,20 @@ export default function Post({ index, postData }) {
                     </svg>
                 </button>
                 
-            <p>{postData.description}</p>
+                <p>{postData.description}</p>
+
+                <ul>
+                    {commentList.map((comment, index) => (
+                        <li key={index}>
+                            {comment}
+                        </li>
+                    ))}
+                </ul>
+
             </footer>
+
+            <CommentBoxInput commentList={commentList} setCommentList={setCommentList} />
+
         </Container>
     );
 }
