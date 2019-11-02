@@ -26,14 +26,18 @@ export const Container = styled.div`
         align-items: center;
     }
     img {
-        border-right: 1px solid #000;
-        height: 3rem;
-        padding-right: 0.8rem;
+        height: 2rem;
         /* transform: scale(0.25); */
     }
+    div.vertical-divider {
+        height: 2rem;
+        margin: 0 0.8rem 0 0.8rem;
+        border-right: 1px solid #000;
+
+        transition: border-color 0.2s ease-in-out;
+    }
     h1 {
-        margin-left: 0.8rem;
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         font-weight: 300;
         font-family: 'Cookie', cursive;
 
@@ -49,7 +53,7 @@ export const Container = styled.div`
     .navbar.scrolled>.ruler>h1 {
         opacity: 0;
     }
-    .navbar.scrolled>.ruler>img {
+    .navbar.scrolled>.ruler>div {
         border-color: #fff;
     }
 

@@ -31,6 +31,7 @@ export default function Navbar() {
             <div className={`navbar ${scrolled ? "scrolled" : "non-scrolled"}`}>
                 <div className="ruler">
                     <img src="./react-logo.svg" alt="react logo" />
+                    <div className="vertical-divider"></div>
                     <h1>
                         Insta-Clone
                     </h1>
