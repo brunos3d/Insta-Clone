@@ -4,7 +4,8 @@
 ---
 
 ## Live Preview:
-Você pode testar o App no link a seguir:
+Você pode testar o App em um dos links a seguir:
+>https://brunos3d.github.io/Insta-Clone/
 >https://insta-clone.bruno3dcontato.now.sh/
 
 ### Funcionalidades:
