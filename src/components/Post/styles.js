@@ -40,8 +40,11 @@ export const Container = styled.article`
     }
 
     @media screen and (max-width: 800px) {
-        margin-top: 30px;
         width: 100%;
+        margin-top: 30px;
+
+        border-left: none;
+        border-right: none;
 
         &>footer {
             padding: 16px;

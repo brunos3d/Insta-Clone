@@ -4,6 +4,7 @@ import { Container } from './styles';
 
 import UserHeader from '../UserHeader';
 import LazyImage from '../LazyImage';
+import CommentList from '../CommentList';
 import CommentBoxInput from '../CommentBoxInput';
 
 export default function Post({ index, postData }) {
@@ -57,13 +58,7 @@ export default function Post({ index, postData }) {
                 
                 <p>{postData.description}</p>
 
-                <ul>
-                    {commentList.map((comment, index) => (
-                        <li key={index}>
-                            {comment}
-                        </li>
-                    ))}
-                </ul>
+                <CommentList commentList={commentList} />
 
             </footer>
 
