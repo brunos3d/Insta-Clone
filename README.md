@@ -23,11 +23,26 @@ Você pode testar o App no link a seguir:
 Dispõe uma lista de imagens para construção do feed.
 >https://picsum.photos/
 
+### Observações importantes
+
+```
+As informações exibidas no Aplicativo não tem
+autênticidade e podem ou não serem verdadeira,
+são apenas informações com fim de preencher
+campos de texto e imagem por simples ilustração
+do Aplicativo. O aplicativo tem, como único fim,
+o estudo sobre React e formas de tornar um WebSite
+ reativo e responsivo de acordo com cada dispositivo.
+```
+
 # Browser View
 ![Preview 1](./images/image01.png)
 
 # Mobile View
 ![Preview 2](./images/image02.png)
 
-# Lazy-Load Images
+# Tablet View
 ![Preview 3](./images/image03.png)
+
+# Lazy-Load Images
+![Preview 4](./images/image04.png)
