@@ -1,137 +1,76 @@
-// I love this project <3
-// https://github.com/wh-iterabb-it/meowfacts
+const fullList = [
+    'Todos os anos, cerca de quatro milhões de gatos são comidos na Ásia.',
+    'Em média, os gatos passam 2/3 do seu dia dormindo. Isto significa que um gato com nove anos esteve acordado apenas três anos da sua vida.',
+    'Diferente dos cães, gatos não gostam de doces. Cientistas acreditam que isso se deve a uma mutação em algum receptor-chave do paladar.',
+    'Quando o gato caça a sua presa, ele mantém sua cabeça nivelada. Cães e humanos levantam e baixam a cabeça.',
+    'As gatas tendem a ser destras enquanto os gatos são, mais frequentemente, canhotos. É interessante, pois enquanto 90% dos humano são destros, os restantes 10% dos canhotos tambem tendem a ser do gênero masculino.',
+    'Um gato não pode descer de uma árvore de cabeça pra baixo porque todas as suas garras são de "mão única", ou seja,  foram feitas para ele se firmar nas superfícies para subir, mas não para descer. Os gatos só conseguem descer de árvores ficando de frente para elas',
+    'Gatos produzem cerca de 100 sons diferentes. Cães fazem apenas 10.',
+    'O cérebro de um gato é biologicamente mais semelhante ao cérebro humano do que o do cão. Ambos possuem idênticas regiões no cérebro responsáveis pelas emoções.',
+    'Existem mais de 500 milhões de gatos domésticos no mundo, com aproximadamente 40 raças reconhecidas.',
+    'Durante a época da Inquisição Espanhola, o papa Inocêncio VIII condenou os gatos como sendo seres malignos e milhares deles foram queimados. Infelizmente, a matança generalizada de gatos levou a uma explosão da população de ratos, que agravou os efeitos da Peste Negra.',
+    'Durante a Idade Média, os gatos eram associados à pratica de feitiçaria, e, na noite de São João, em toda a Europa, muita gente enfiava uma porção de gatos em sacos e os atiravam às fogueiras. Em dias santos, as pessoas celebravam jogando gatos do alto das torres das igrejas.',
+    'Os gatos são os animais de estimação mais populares na América do Norte: existem 73 milhões de gatos e 63 milhões de cachorros. Por volta de 30% dos lares norte-americanos têm um gato',
+    'De acordo com uma lenda judaica, Noé rezou a Deus, pedindo proteção para que os alimentos que ele tinha armazenado na arca não fossem comidos pelos ratos. Como resposta, Deus fez o leão espirrar, e daí, surgiu o gato.',
+    'A audição do gato é melhor do que a do cão. E o gato pode ouvir sons de alta frequência até duas oitavas mais altas do que o ouvido humano.',
+    'Um gato pode andar à velocidade máxima de 49km/hora em uma distância curta.',
+    'Um gato pode pular até cinco vezes a sua própria altura em um salto só.',
+    'Alguns gatos sobrevivem a quedas de alturas de até 20 metros devido, principalmente, ao seu "reflexo corretivo". Os olhos e os órgãos do equilíbrio no ouvido interno informam quando o gato está no ar, de forma que ele possa cair sobre suas patas. Mesmo gatos sem cauda possuem esta habilidade.',
+    'O gato se esfrega nas pessoas não apenas para demonstrar afeição, mas também para demarcar seu território com as glândulas de feromônios que ele possui  em volta de sua cara, cauda e patas. Assim, ele sabe que você é "propriedade dele".',
+    'Os pesquisadores não têm certeza de como os gatos ronronam. A maioria dos veterinários acredita que os gatos ronronam fazendo suas pregas vocais vibrarem na garganta. Para tanto, um músculo na laringe abre e fecha a passagem de ar cerca de 25 vezes por segundo.',
+    'No Antigo Egito, quando morria um gato de estimação, os membros da família demonstravam seu luto raspando as sobrancelhas. Eles também realizavam elaborados funerais durante os quais bebiam vinho e batiam no peito. O gato era embalsamado e recebia uma máscara mortuária esculpida em madeira. A pequena múmia era colocada no mausoléu da família ou em um cemitério de animais, junto com pequenas múmias de camundongos.',
+    'A maioria das gatas dá à luz uma ninhada entre um e nove gatos. A maior ninhada já registrada foi de 19 gatinhos, dos quais 15 sobreviveram.',
+    'O maior gato selvagem da atualidade é o Tigre Siberiano. Ele pode medir mais de 3.6m de comprimento (o tamanho de um carro pequeno) e pesar até 317kg.',
+    'O menor dos gatos selvagens é o Gato de Pés Pretos, originário da África. As fêmeas têm menos de 50cm de comprimento e podem pesar apenas 1.2kg.',
+    'Muitos egípcios veneravam a deusa Bastet, que possuía corpo de mulher e cabeça de gato.',
+    'O Profeta Maomé amava gatos e, dizem, seu gato favorito, Muezza, era um de pelo brasino. Reza a lenda que os gatos brasinos têm um "M" de Mohamed nas suas cabeças por ser ali que o Profeta, muitas vezes, descansava a sua mão.',
+    'Enquanto em muitas regiões da Europa e América do Norte gatos pretos são considerados sinal de azar, na Grã-Bretanha e Austrália, eles são considerados talismãs de boa sorte.',
+    'Alguns gatos siameses parecem estrábicos porque os nervos do lado esquerdo do cérebro vão, em sua maioria, para o olho direito, e os nervos do lado direito do cérebro vão mais para o lado esquerdo. Isso provoca visão dupla, que o gato corrige "cruzando" os olhos.',
+    'Gatos detestam água porque seu pelo não isola bem quando está molhado. O gato Van da Turquia, entretanto, é uma espécie que gosta de nadar. Originário da Ásia central, sua pelagem possui uma textura especial que a torna resistente à água.',
+    'O gato Mau do Egito é, provavelmente, a raça mais antiga de gatos. Na verdade, é tão antiga, que o nome da raça é a palavra egipcia para "gato".',
+    'O gato mais caro do mundo chama-se Little Nicky, que custou 50 mil Dólares ao seu dono. Ele é um clone de um outro gato.',
+    'Um gato possui cerca de 12 fios de bigode de cada lado da cara.',
+    'A visão dos gatos é melhor e pior do que a dos humanos. É melhor porque eles podem ver com pouquíssima luz e têm visão periférica maior. É pior porque eles não veem cores tão bem como os humanos. Cientitas acreditam que a grama tem a cor vermelha para os gatos',
+    'Na versão original italiana de Cinderela, a fada-madrinha tinha a forma de uma gata.',
+    'Os pequenos tufos de pelo nas orelhas dos gatos ajudam a protegê-las das sujeiras e de sons diretos, isolando-as.',
+    'A habilidade dos gatos para encontrarem seu caminho para casa é chamada de "viagem-psi". Especialistas acreditam que os gatos os gatos utilizam os ângulos da luz solar para encontrar seu caminho ou que eles possuem células magnetizadas no seu cérebro, que agem como bússolas.',
+    'Isaac Newton inventou a porta para gatos. O cientista estava fazendo experiências em um quarto escuro. Spithead, um dos seus gatos, ficava abrindo a porta e perturbando o procedimento. A porta para gatos deixou Newton e Spithead satisfeitos.',
+    'O café mais raro e caro do mundo é o Kopi Luwak, que vem da Indonésia, onde gatos selvagens chamados "luwak" vivem. O gatos  comem os frutos do café e os grãos da planta passam pelo seu sistema digestivo. Os grãos são retirados das fezes dos gatos, limpos e torrados. Um saco de 450g de Kopi Luwak é vendido a 500 Dólares.',
+    'A mandíbula dos gatos não se move para os lados. Portanto, eles não podem mastigar grandes porções de comida.',
+    'Um gato quase nunca mia para outro gato, e sim, para humanos. O comportamento dos gatos, entre eles, é de cuspir, ronronar e de fazer "pfffffff..." um para o outro.',
+    'As costas dos gatos são extremamente flexíveis porque possuem 53 vértebras que se encaixam. Humanos têm apenas 34.',
+    'Aproximadamente 1/3 dos donos de gatos pensam que os felinos podem ler seus pensamentos.',
+    'Dois membros da família dos gatos são bem distintos dos outros: o leopardo nublado e o guepardo. O leopardo nublado não urra como os outros grandes gatos, nem se lava ou repousa como os gatos menores. O guepardo é único porque é um gato corredor, enquanto os outros são gatos que pulam sobre suas presas.',
+    'No Japão, acredita-se que os gatos têm o poder de tornar-se espíritos superiores quando morrem. Talvez seja assim porque, conforme o Budismo, o corpo do gato é o lugar de repouso temporário de pessoas muito espiritualizadas.',
+    'A maioria dos gatos tinha pelagem curta até cerca de 100 anos atrás, quando ter gatos tornou-se "tendência", bem como as experiências com cruzamentos de raças.',
+    'Gatos possuem 32 músculos que controlam o ouvido externo (humanos têm apenas 6). Um gato pode girar suas orelhas, de forma independente, num angulo de 180 graus.',
+    'Uma das razões por que gatinhos dormem tanto é porque o hormônio de crescimento é liberado apenas durante o sono.',
+    'O gato mais velho já registrado chama-se Crème Puff, de Austin, texas, EUA, que viveu de 1967 a 06 de Agosto de 2005, três dias depois do seu 38o. aniversário. Um gato normalmente vive até 20 anos, que são equivalentes a 96 anos dos humanos.',
+    'Os  gatos têm 230 ossos no seu corpo. Os humanos têm 206. Os gatos não têm clavícula, portanto, eles entram em qualquer lugar por onde passe sua cabeça',
+    'O focinho de um gato possui um padrão único, assim como a impressão digital de um humano.',
+    'Se tiverem bastante água disponível, gatos podem suportar temperaturas até 56 graus centígrados;',
+    'Entre os alimentos que não devem ser dados aos gatos estão: cebola, alho, tomate, batata crua, chocolate, uvas e passas de uva. Embora leite não seja  tóxico, pode causar problemas digestivos e gases. Tylenol e aspirina são extremamente tóxicos para gatos, bem como muitas plantas decorativas. Alimentar gatos com comida para cães ou atum enlatado para consumo humano pode causar desnutrição.',
+    'Uma pesquisa de 2007 feita pelo Instituto Gallup indicou que tanto homens quanto mulheres gostam de gatos.',
+    'As batidas do coração de um gato são quase duas vezes mais rápidas do que as do coração humano, entre 110 e 140 batidas por minuto.',
+    'Gatos não possuem glândulas sudoríparas em seu corpo. Eles transpiram somente através de suas patas.',
+    'Os gatos passam quase 1/3 dos momentos em que estão acordados se limpando e se arrumando.',
+    'Gatos são extremamente sensíveis a vibrações. Há registros de gatos que detectaram tremores de terra 10 ou 15 minutos antes dos humanos.',
+    'Ao contrário dos cães, gatos não sofreram grandes modificações durante seu processo de domesticação.',
+    'Em inglês, os nomes "Queen" ou "Molly" são os mais comuns para gatas.',
+    'Existem cerca de 60 milhões de gatos selvagens apenas nos Estados Unidos.',
+    'As garras das patas traseiras dos gatos não são afiadas como as dianteiras porque elas não se retraem e, consequentemente, sofrem desgaste.',
+];
 
-// I just didn't use this endpoint because of the overhead and handshake
-// https://meowfacts.herokuapp.com/ (endpoint)
-
-function getSingle() {
-  const li = [
-    'In 1987 cats overtook dogs as the number one pet in America.',
-    'Cats that live together sometimes rub each others heads to show that they have no intention of fighting.'
-    + ' Young cats do this more often, especially when they are excited.',
-    'Mother cats teach their kittens to use the litter box.',
-    'To unsubscribe from catfacts, reply the following code: tj3G5de$se',
-    'You gotta be kitten me! are you sure you want to unsubscribe? send YES or NO',
-    'Invalid Command, CatFacts!',
-    'The way you treat kittens in the early stages of it\'s life will render it\'s personality traits later in life.',
-    'Contrary to popular belief, the cat is a social animal. A pet cat will respond and answer to speech , '
-    + 'and seems to enjoy human companionship.',
-    'When well treated, a cat can live twenty or more years but the average life span of a domestic cat is 14 years.',
-    'Neutering a cat extends its life span by two or three years.',
-    'To unsubscribe from catfacts, reply the following code: tj3G5de$se',
-    'You gotta be kitten me! are you sure you want to unsubscribe? send YES or NO',
-    'Invalid Command, CatFacts!',
-    'Cats, especially older cats, do get cancer. Many times this disease can be treated successfully.',
-    'Cats can not taste sweets.',
-    'Cats must have fat in their diet because they cannot produce it on their own.',
-    'Some common houseplants poisonous to cats include: English Ivy, iris, mistletoe, philodendron, and yew.',
-    'Tylenol and chocolate are both poisionous to cats.',
-    'Many cats cannot properly digest cows milk. Milk and milk products give them diarrhea.',
-    'The average cat food meal is the equivalent to about five mice.',
-    'Cats can get tapeworms from eating fleas. These worms live inside the cat forever, or until they are re'
-    + 'moved with medication. They reproduce by shedding a link from the end of their long bodies. This link c'
-    + 'rawls out the cat\'s anus, and sheds hundreds of eggs. These eggs are injested by flea larvae, and the '
-    + 'cycles continues. Humans may get these tapeworms too, but only if they eat infected fleas. Cats with ta'
-    + 'peworms should be dewormed by a veterinarian.',
-    'Cats can get tapeworms from eating mice. If your cat catches a mouse it is best to take the prize away '
-    + 'from it.',
-    'A form of AIDS exists in cats.',
-    'The color of the points in Siamese cats is heat related. Cool areas are darker.',
-    'Siamese kittens are born white because of the heat inside the mother\'s uterus before birth. This heat '
-    + 'keeps the kittens\' hair from darkening on the points.',
-    'People who are allergic to cats are actually allergic to cat saliva or to cat dander. If the resident c'
-    + 'at is bathed regularly the allergic people tolerate it better.',
-    'Studies now show that the allergen in cats is related to their scent glands. Cats have scent glands on '
-    + 'their faces and at the base of their tails. Entire male cats generate the most scent. If this secretion'
-    + ' from the scent glands is the allergen, allergic people should tolerate spayed female cats the best.',
-    'Cats do not think that they are little people. They think that we are big cats. This influences their b'
-    + 'ehavior in many ways.',
-    'Cats are subject to gum disease and to dental caries. They should have their teeth cleaned by the vet o'
-    + 'r the cat dentist once a year.',
-    'Many people fear catching a protozoan disease, Toxoplasmosis, from cats. This disease can cause illness'
-    + ' in the human, but more seriously, can cause birth defects in the unborn. Toxoplasmosis is a common dis'
-    + 'ease, sometimes spread through the feces of cats. It is caused most often from eating raw or rare beef.'
-    + ' Pregnant women and people with a depressed immune system should not touch the cat litter box. Other th'
-    + 'an that, there is no reason that these people have to avoid cats.',
-    'The ancestor of all domestic cats is the African Wild Cat which still exists today.',
-    'In ancient Egypt, killing a cat was a crime punishable by death.',
-    'In ancient Egypt, mummies were made of cats, and embalmed mice were placed with them in their tombs. In'
-    + ' one ancient city, over 300,000 cat mummies were found.',
-    'In the Middle Ages, during the Festival of Saint John, cats were burned alive in town squares.',
-    'The first cat show was in 1871 at the Crystal Palace in London.',
-    'Today there are about 100 distinct breeds of the domestic cat.',
-    'Like birds, cats have a homing ability that uses its biological clock, the angle of the sun, and the Ea'
-    + 'rth\'s magnetic field. A cat taken far from its home can return to it. But if a cat\'s owners move far '
-    + 'from its home, the cat can\'t find them.',
-    'Cats bury their feces to cover their trails from predators.',
-    'Cats sleep 16 to 18 hours per day. When cats are asleep, they are still alert to incoming stimuli. If y'
-    + 'ou poke the tail of a sleeping cat, it will respond accordingly.',
-    'Besides smelling with their nose, cats can smell with an additional organ called the Jacobson\'s organ,'
-    + ' located in the upper surface of the mouth.',
-    'The chlorine in fresh tap water irritates sensitive parts of the cat\'s nose. Let tap water sit for 24 '
-    + 'hours before giving it to a cat.',
-    'Abraham Lincoln loved cats. He had four of them while he lived in the White House.',
-    'Julius Ceasar, Henri II, Charles XI, and Napoleon were all afraid of cats.',
-    'Cats have an average of 24 whiskers, arranged in four horizontal rows on each side.',
-    'The word "cat" in various languages: French: chat; German: katze; Italian: gatto; Spanish/Portugese: ga'
-    + 'to; Yiddish: kats; Maltese: qattus; Swedish/Norwegian: katt; Dutch: kat; Icelandic: kottur; Greek: catt'
-    + 'a; Hindu: katas; Japanese:neko; Polish: kot; Ukranian: kotuk; Hawiian: popoki; Russian: koshka; Latin: '
-    + 'cattus; Egyptian: mau; Turkish: kedi; Armenian: Gatz; Chinese: mio; Arabic: biss; Indonesian: qitta; Bu'
-    + 'lgarian: kotka; Malay: kucing; Thai/Vietnamese: meo; Romanian: pisica; Lithuanian: katinas; Czech: kock'
-    + 'a; Slovak: macka; Armenian: gatz; Basque: catua; Estonian: kass; Finnish: kissa; Swahili: paka.',
-    'Statistics indicate that animal lovers in recent years have shown a preference for cats over dogs!',
-    'Cats can be taught to walk on a leash, but a lot of time and patience is required to teach them. The yo'
-    + 'unger the cat is, the easier it will be for them to learn.',
-    'Purring not always means happiness. Purring could mean a cat is in terrible pain such as during childbi'
-    + 'rth. Kitten will purr to their mother to let her know they are getting enough milk while nursing. Purri'
-    + 'ng is a process of inhaling and exhaling, usually performed while the mouth is closed. But don\'t worry'
-    + ', if your cat is purring while your gently petting her and holding her close to you - that is a happy c'
-    + 'at!',
-    'The catnip plant contains an oil called hepetalactone which does for cats what marijuana does to some p'
-    + 'eople. Not all cats react to it those that do appear to enter a trancelike state. A positive reaction t'
-    + 'akes the form of the cat sniffing the catnip, then licking, biting, chewing it, rub & rolling on it rep'
-    + 'eatedly, purring, meowing & even leaping in the air.',
-    'Of all the species of cats, the domestic cat is the only species able to hold its tail vertically while'
-    + ' walking. All species of wild cats hold their talk horizontally or tucked between their legs while walk'
-    + 'ing.',
-    'A happy cat holds her tail high and steady.',
-    'Almost 10% of a cat\'s bones are in its tail, and the tail is used to maintain balance.',
-    'Cat families usually play best in even numbers. Cats and kittens should be aquired in pairs whenever po'
-    + 'ssible.',
-    'Baking chocolate is the most dangerous chocolate to your cat.',
-    'You check your cats pulse on the inside of the back thigh, where the leg joins to the body. Normal for '
-    + 'cats: 110-170 beats per minute.',
-    'Jaguars are the only big cats that don\'t roar.',
-    'A cats field of vision is about 185 degrees.',
-    'Cats have individual preferences for scratching surfaces and angles. Some are horizontal scratchers whi'
-    + 'le others exercise their claws vertically.',
-    'The Maine Coone is the only native American long haired breed.',
-    'The Maine Coon is 4 to 5 times larger than the Singapura, the smallest breed of cat.',
-    'Tabby cats are thought to get their name from Attab, a district in Baghdad, now the capital of Iraq.',
-    'Retractable claws are a physical phenomenon that sets cats apart from the rest of the animal kingdom. I'
-    + 'n the cat family, only cheetahs cannot retract their claws.',
-    'Not every cat gets "high" from catnip. Whether or not a cat responds to it depends upon a recessive gen'
-    + 'e: no gene, no joy.',
-    'A cat can sprint at about thirty-one miles per hour.',
-    'In ancient Egypt, when a family cat died, all family members would shave their eyebrows as a sign of mo'
-    + 'urning.',
-    'Cats have been domesticated for half as long as dogs have been.',
-    'A cat\'s whiskers are thought to be a kind of radar, which helps a cat gauge the space it intends to wa'
-    + 'lk through.',
-    'A cat can spend five or more hours a day grooming himself.',
-    'All cats have three sets of long hairs that are sensitive to pressure - whiskers, eyebrows,and the hair'
-    + 's between their paw pads.',
-    'Both humans and cats have identical regions in the brain responsible for emotion.',
-    'To unsubscribe from catfacts, reply the following code: tj3G5de$se',
-    'You gotta be kitten me! are you sure you want to unsubscribe? send YES or NO',
-    'Invalid Command, CatFacts!',
-    'A cat\'s brain is more similar to a man\'s brain than that of a dog.',
-    'A cat has more bones than a human; humans have 206, and the cat - 230.',
-    'Cats have 30 vertebrae--5 more than humans have.',
-  ];
-
-  return li[Math.floor(Math.random() * li.length)];
+function getFullList() {
+    return fullList;
 }
 
+function getSingle(index) {
+    return fullList[index];
+}
 
-module.exports = { getSingle };
+function getRandom() {
+    return fullList[Math.floor(Math.random() * fullList.length)];
+}
+
+module.exports = { getFullList, getSingle, getRandom };

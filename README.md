@@ -18,10 +18,6 @@ Você pode testar o App no link a seguir:
 
 ---
 
-#### MeowFacts
-Dispõe uma descrição aleatória para cada postagem.
->https://github.com/wh-iterabb-it/meowfacts
-
 #### Lorem Picsum
 Dispõe uma lista de imagens para construção do feed.
 >https://picsum.photos/

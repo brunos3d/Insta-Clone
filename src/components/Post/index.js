@@ -11,8 +11,8 @@ export default function Post({ index, postData }) {
 
     const [favorite, setFavorite] = useState(false);
     const [commentList, setCommentList] = useState([]);
-    const [description, setDescription] = useState(postData.description);
     const [isShortened, setShortenedValue] = useState(false);
+    const [description, setDescription] = useState(postData.description);
 
     const large_image = `https://picsum.photos/id/${postData.id}/600`;
     const minified_image = `https://picsum.photos/id/${postData.id}/32`;
@@ -24,7 +24,7 @@ export default function Post({ index, postData }) {
     };
 
     useEffect(() => {
-        if (postData.description.length > 120) { 
+        if (postData.description.length > 120) {
             let result = postData.description.substr(0, 120);
             result = result.substr(0, Math.min(result.length, result.lastIndexOf(" ")))
             

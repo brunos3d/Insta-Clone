@@ -45,7 +45,7 @@ export default function App() {
 
 
             for (let id = 0; id < array_data.length; id++) {
-                array_data[id].description = MeowFacts.getSingle();
+                array_data[id].description = MeowFacts.getRandom();
             }
 
             setFeedData(shuffle(array_data));
