@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Container } from './styles';
 
@@ -11,6 +11,8 @@ export default function Post({ index, postData }) {
 
     const [favorite, setFavorite] = useState(false);
     const [commentList, setCommentList] = useState([]);
+    const [description, setDescription] = useState(postData.description);
+    const [isShortened, setShortenedValue] = useState(false);
 
     const large_image = `https://picsum.photos/id/${postData.id}/600`;
     const minified_image = `https://picsum.photos/id/${postData.id}/32`;
@@ -20,6 +22,21 @@ export default function Post({ index, postData }) {
         name: postData.author,
         avatar: minified_image
     };
+
+    useEffect(() => {
+        if (postData.description.length > 120) { 
+            let result = postData.description.substr(0, 120);
+            result = result.substr(0, Math.min(result.length, result.lastIndexOf(" ")))
+            
+            setDescription(result);
+            setShortenedValue(true);
+        }
+    }, [postData.description]);
+
+    function readMoreButtonHandle(event) { 
+        setDescription(postData.description);
+        setShortenedValue(false);
+    }
 
     return (
         <Container>
@@ -35,7 +52,7 @@ export default function Post({ index, postData }) {
             />
 
             <footer>
-                <button onClick={() => setFavorite(!favorite)}>
+                <button className="favorite-button" onClick={() => setFavorite(!favorite)}>
                     <svg className={favorite ? "upvote" : "downvote"} version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                         {favorite ? (
                             <g>
@@ -63,7 +80,20 @@ export default function Post({ index, postData }) {
                     </svg>
                 </button>
                 
-                <p>{postData.description}</p>
+                <p>
+                    <a className="author" href={postData.url}>{postData.author}</a>
+                    <span>
+                        <span className="post-description">
+                            {description}
+                        </span>
+                        {isShortened && (
+                            <span>
+                                ...
+                                <button className="read-more" onClick={readMoreButtonHandle}>mais</button>
+                            </span>
+                        )}
+                    </span>
+                </p>
 
                 <CommentList commentList={commentList} />
 
