@@ -8,6 +8,7 @@ export const Container = styled.section`
     border-top: 1px solid #efefef;
 
     display: flex;
+    flex-direction: row;
     align-items: center;
 
     form {
@@ -23,7 +24,6 @@ export const Container = styled.section`
 
         flex-grow: 1;
 
-        width: 100%;
         height: 100%;
 
         border: none;
@@ -41,7 +41,6 @@ export const Container = styled.section`
         border: none;
         outline: none;
         background: none;
-        padding-right: 1rem;
 
         user-select: none;
     }
