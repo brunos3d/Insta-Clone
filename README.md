@@ -14,6 +14,7 @@ Você pode testar o App no link a seguir:
 3. Transição dinâmica entre imagens de baixa e alta resolução.
 4. Duplo clique para curtir postagens.
 5. Layout Resposivo.
+6. Caixa de inserçãode comentário.
 
 ---
 
