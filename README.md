@@ -7,8 +7,6 @@
 Você pode testar o App em um dos links a seguir:
 >https://brunos3d.github.io/Insta-Clone/
  
->https://insta-clone.bruno3dcontato.now.sh/
-
 ### Funcionalidades:
 
 1. Feed com carregamento dinâmico (Lorem Picsum).
