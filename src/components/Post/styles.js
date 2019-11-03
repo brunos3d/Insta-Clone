@@ -21,6 +21,7 @@ export const Container = styled.article`
     }
     &>footer svg {
         width: 32px;
+        height: 32px;
     }
 
     &>footer>button {

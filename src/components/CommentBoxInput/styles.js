@@ -42,9 +42,11 @@ export const Container = styled.section`
         outline: none;
         background: none;
 
+        cursor: pointer;
         user-select: none;
     }
     form>button:disabled {
+        cursor: default;
         opacity: 0.3;
     }
 

@@ -17,31 +17,54 @@ export const Container = styled.div`
         transition-timing-function: ease-in-out;
     }
     .ruler {
-        margin: auto;
-        padding: 0 20px 0 20px;
         height: 100%;
         max-width: 1000px;
+        
+        margin: auto;
+        padding: 0 20px 0 20px;
+
+        display: flex;
+        flex-direction: row;
+
+        align-items: center;
+        justify-content: space-between;
+    }
+    .ruler>a {
         display: flex;
         flex-direction: row;
         align-items: center;
+
+        color: #000;
+        text-decoration: none;
     }
-    img {
+    
+    .ruler>a>img {
         height: 2rem;
-        /* transform: scale(0.25); */
     }
-    div.vertical-divider {
+    .vertical-divider {
         height: 2rem;
         margin: 0 0.8rem 0 0.8rem;
         border-right: 1px solid #000;
 
         transition: border-color 0.2s ease-in-out;
     }
-    h1 {
+    .ruler>a>h1 {
         font-size: 2.2rem;
         font-weight: 300;
         font-family: 'Cookie', cursive;
 
         transition: opacity 0.2s ease-in-out;
+    }
+
+    .github-project-buttons {
+        display: flex;
+        flex-direction: row;
+
+        align-items: center;
+        justify-content: space-between;
+    }
+    .github-project-buttons>span {
+        margin: 3px;
     }
     
     .navbar.non-scrolled {
@@ -50,10 +73,10 @@ export const Container = styled.div`
     .navbar.scrolled {
         height: 52px;
     }
-    .navbar.scrolled>.ruler>h1 {
+    .navbar.scrolled>.ruler>a>h1 {
         opacity: 0;
     }
-    .navbar.scrolled>.ruler>div {
+    .navbar.scrolled>.ruler>a>.vertical-divider {
         border-color: #fff;
     }
 
@@ -67,14 +90,20 @@ export const Container = styled.div`
         .ruler {
             max-width: 600px;
         }
-        h1 {
-            font-size: 2rem;
+        .ruler>a>h1 {
+            display: none;
+        }
+        .ruler>a>.vertical-divider {
+            display: none;
         }
     }
 
     @media screen and (max-width: 500px) {
         .ruler {
             max-width: 100%;
+        }
+        .github-project-buttons {
+            display: none;
         }
     }
 `;
