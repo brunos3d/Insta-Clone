@@ -25,7 +25,14 @@ export default function Post({ index, postData }) {
         <Container>
             <UserHeader userData={user_data} />
 
-            <LazyImage loadOnInit={index === 0} favorite={favorite} setFavorite={(value) => setFavorite(value)} minified={minified_image} large={large_image} alt={`${postData.id}`} />
+            <LazyImage
+                loadOnInit={index === 0}
+                favorite={favorite}
+                setFavorite={(value) => setFavorite(value)}
+                minified={minified_image}
+                large={large_image}
+                alt={`${postData.id}`}
+            />
 
             <footer>
                 <button onClick={() => setFavorite(!favorite)}>
@@ -61,9 +68,8 @@ export default function Post({ index, postData }) {
                 <CommentList commentList={commentList} />
 
             </footer>
-
+            
             <CommentBoxInput commentList={commentList} setCommentList={setCommentList} />
-
         </Container>
     );
 }

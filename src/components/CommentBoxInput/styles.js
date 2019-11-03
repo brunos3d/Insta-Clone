@@ -21,11 +21,32 @@ export const Container = styled.section`
 
         font-size: 0.9rem;
 
+        flex-grow: 1;
+
         width: 100%;
         height: 100%;
 
         border: none;
         outline: none;
+    }
+    form>button {
+        width: auto;
+
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-align: center;
+
+        color: #3897f0;
+
+        border: none;
+        outline: none;
+        background: none;
+        padding-right: 1rem;
+
+        user-select: none;
+    }
+    form>button:disabled {
+        opacity: 0.3;
     }
 
 `;

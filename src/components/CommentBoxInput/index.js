@@ -12,17 +12,29 @@ export default function CommentBoxInput({ commentList, setCommentList }) {
 
     function handlePostComment(event) {
         // check if string is empty
-        if (commentValue && commentValue.trim()) {
+        if (isValidComment()) {
             setCommentList([...commentList, commentValue]);
             setCommentValue("");
         }
         event.preventDefault();
     }
 
+    function isValidComment() {
+        return commentValue && commentValue.trim();
+    }
+
     return (
         <Container>
             <form onSubmit={handlePostComment}>
-                <input type="text" placeholder="Adicione um comentário..." value={commentValue} onChange={handleCommentValue} />
+                <input
+                    type="text"
+                    autocorrect="off"
+                    autocomplete="off"
+                    value={commentValue}
+                    onChange={handleCommentValue}
+                    placeholder="Adicione um comentário..."
+                />
+                <button disabled={!isValidComment()} type="submit">Publicar</button>
             </form>
         </Container>
     );
