@@ -19,6 +19,11 @@ export const Container = styled.article`
         color: #262626;
         font-size: 0.9rem;
     }
+    &>footer .moment-timestamp {
+        color: #999;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+    }
     &>footer>p>.author {
         color: #262626;
         margin-right: 0.25rem;

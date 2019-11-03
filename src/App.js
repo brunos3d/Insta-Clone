@@ -16,19 +16,15 @@ export default function App() {
         setCurrentPage(currentPage + 1);
     }
 
-    // Special Thank's
     // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
     function shuffle(array) {
         let currentIndex = array.length, temporaryValue, randomIndex;
 
-        // While there remain elements to shuffle...
         while (0 !== currentIndex) {
 
-            // Pick a remaining element...
             randomIndex = Math.floor(Math.random() * currentIndex);
             currentIndex -= 1;
 
-            // And swap it with the current element.
             temporaryValue = array[currentIndex];
             array[currentIndex] = array[randomIndex];
             array[randomIndex] = temporaryValue;
@@ -37,18 +33,24 @@ export default function App() {
         return array;
     }
 
+
     useEffect(() => {
 
         async function fetchData() {
             const picsum_response = await fetch(`https://picsum.photos/v2/list?page=${currentPage}&limit=100`);
             const array_data = await picsum_response.json();
 
+            function randomDate(start, end) {
+                return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+            }
 
             for (let id = 0; id < array_data.length; id++) {
                 array_data[id].description = MeowFacts.getRandom();
+                array_data[id].timestamp = randomDate(new Date(2019, 9, 1), new Date());
             }
 
-            setFeedData(shuffle(array_data));
+            const sort_by_date = array_data.sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime());
+            setFeedData(sort_by_date);
         }
 
         fetchData();

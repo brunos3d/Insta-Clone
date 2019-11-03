@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import Moment from 'react-moment';
+import 'moment/locale/pt';
+
 
 import { Container } from './styles';
 
@@ -96,6 +99,8 @@ export default function Post({ index, postData }) {
                 </p>
 
                 <CommentList commentList={commentList} />
+
+                <Moment className="moment-timestamp" fromNowDuring="1314900000" format="LL">{postData.timestamp}</Moment>
 
             </footer>
             
